@@ -1,0 +1,355 @@
+/* Global Styles */
+
+:root {
+	/* Define primary, dark, and light colors */
+	--primary-color: #d91620;
+	--dark-color: #000000;
+	--light-color: #ffffff;
+}
+
+* {
+	/* Reset box-sizing, margin, and padding for all elements */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/* Set font, font smoothing, background, and text color */
+	font-family: 'Arial', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: #000;
+	color: #999;
+}
+
+ul {
+	/* Remove list style for unordered lists */
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	/* Set color for headings */
+	color: #fff;
+}
+
+a {
+	/* Set color and remove text decoration for links */
+	color: #fff;
+	text-decoration: none;
+}
+
+p {
+	/* Set margin for paragraphs */
+	margin: 0.5rem 0;
+}
+
+img {
+	/* Make images responsive */
+	width: 100%;
+}
+
+.showcase {
+	/* Set width, height, position, and background for the showcase section */
+	width: 100%;
+	height: 93vh;
+	position: relative;
+	background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
+}
+
+.showcase::after {
+	/* Create an overlay effect on the showcase section */
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.6);
+	box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+
+.showcase-top {
+	/* Positioning and sizing for the showcase top section */
+	position: relative;
+	z-index: 2;
+	height: 90px;
+}
+
+.showcase-top img {
+	/* Style and position the logo image */
+	width: 170px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-left: 0;
+}
+
+.showcase-top a {
+	/* Position the sign-in button */
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(-50%, -50%);
+}
+
+.showcase-content {
+	/* Style and position the showcase content */
+	position: relative;
+	z-index: 2;
+	width: 65%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 9rem;
+}
+
+.showcase-content h1 {
+	/* Style the main heading */
+	font-weight: 700;
+	font-size: 5.2rem;
+	line-height: 1.1;
+	margin: 0 0 2rem;
+}
+
+.showcase-content p {
+	/* Style the subheading */
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1.9rem;
+	line-height: 1.25;
+	margin: 0 0 2rem;
+}
+
+/* Tabs */
+.tabs {
+	/* Style the tabs section */
+	background: var(--dark-color);
+	padding-top: 1rem;
+	border-bottom: 3px solid #3d3d3d;
+	border-right: none;
+}
+
+.tabs .container {
+	/* Layout and alignment for the tabs container */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.tabs p {
+	/* Style the text within the tabs */
+	font-size: 1.2rem;
+	padding-top: 0.5rem;
+}
+
+.tabs .container > div {
+	/* Style each tab item */
+	padding: 1.5rem 0;
+}
+
+.tabs .container > div:hover {
+	/* Hover effect for tab items */
+	color: #fff;
+	cursor: pointer;
+}
+
+.tab-border {
+	/* Style for the selected tab */
+	border-bottom: var(--primary-color) 4px solid;
+}
+
+/* Tab Content */
+.tab-content {
+	/* Style and positioning for the tab content section */
+	padding: 3rem 0;
+	background: #000;
+	color: #fff;
+}
+
+/* Hide initial content */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content
+{
+	/* Initially hide tab content */
+	display: none;
+	opacity: 0;
+}
+
+.show {
+	/* Display the selected tab content */
+	display: block !important;
+	opacity: 1 !important;
+	transition: all 1s ease-in; }
+
+
+#tab-1-content .tab-1-content-inner {
+	/* Layout for the first tab content */
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+
+#tab-2-content .tab-2-content-top {
+	/* Layout for the second tab content top section */
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+#tab-2-content .tab-2-content-bottom {
+	/* Layout for the second tab content bottom section */
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	text-align: center;
+}
+
+.table {
+	/* Style the table */
+	width: 100%;
+	margin-top: 2rem;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table thead th {
+	/* Style the table header */
+	text-transform: uppercase;
+	padding: 0.8rem;
+}
+
+.table tbody {
+	/* Style the table body */
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.table tbody tr td {
+	/* Style the table cells */
+	color: #999;
+	padding: 0.8rem 1.2rem;
+	text-align: center;
+}
+
+.table tbody tr td:first-child {
+	/* Align the first cell to the left */
+	text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+	/* Style odd rows for better readability */
+	background: #222;
+}
+
+.footer {
+	/* Style and position the footer */
+	max-width: 70%;
+	margin: 1rem auto;
+	overflow: auto;
+}
+
+.footer,
+.footer a {
+	/* Style the footer text and links */
+	color: #999;
+	font-size: 0.9rem;
+}
+
+.footer p {
+	/* Style the footer paragraphs */
+	margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+	/* Layout for the footer columns */
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+}
+
+.footer li {
+	/* Style the footer list items */
+	line-height: 1.9;
+}
+
+.footer .lang-select {
+	/* Style the language selection dropdown */
+	margin-top: 2rem;
+	color: #999;
+	background-color: #000;
+	background-image: none;
+	border: 1px solid #333;
+	padding: 1rem 1.2rem;
+	border-radius: 5px;
+}
+
+/* Container */
+.container {
+	/* Style and position the container */
+	max-width: 70%;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+
+/* Text Styles */
+.text-xl {
+	/* Style for extra-large text */
+	font-size: 2rem;
+}
+
+.text-lg {
+	/* Style for large text */
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.text-md {
+	/* Style for medium text */
+	margin-bottom: 1.5rem;
+	font-size: 1.2rem;
+}
+
+.text-center {
+	/* Center text alignment */
+	text-align: center;
+}
+
+.text-dark {
+	/* Dark text color */
+	color: #999;
+}
+
+/* Buttons */
+/* Buttons */
+.btn {
+    /* General button styles */
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px; }
